@@ -173,7 +173,7 @@ return this.length * this.width * this.height;
   Formula for cuboid surface area of a cube: 
   2 * (length * width + length * height + width * height)  */
 CuboidMaker.proptotype.surfaceArea = function(length, width, height){
-return 2 * (length * width + length * height + width * height);
+return 2 * (this.length * this.width + this.length * this.height + this.width * this.height);
 }
 
 
@@ -182,27 +182,41 @@ return 2 * (length * width + length * height + width * height);
 /* 🐴🐴🐴 Step 4: Create a new object that uses CuboidMaker 🐴🐴🐴
   Create an object called cuboid that uses the new keyword to use our CuboidMaker constructor
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid. */
-
+let cuboid = new CuboidMaker(4,5,5);
 
 
 
 
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-// console.log(cuboid.volume()); // 100
-// console.log(cuboid.surfaceArea()); // 130
+console.log(cuboid.volume()); // 100
+console.log(cuboid.surfaceArea()); // 130
  
 
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //🦄🦄🦄 1. Take your prototypes from above and refactor into class syntax. Please rename your class CuboidMakerTwo and your object cuboidTwo 🦄🦄🦄
 class CuboidMakerTwo{
-
+constructor(length, width, height){
+  this.length = length,
+  this.width = width, 
+  this.height = height
 }
+
+volume(length, width, height){
+  return this.length * this.width * this.height;
+}
+
+surfaceArea(length, width, height){
+  return 2 * (this.length * this.width + this.length * this.height + this.width * this.height);)
+}
+}
+
+let cuboidTwo = new CuboidMakerTwo(4,5,5);
 
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
-// console.log(cuboidTwo.volume()); // 100
-// console.log(cuboidTwo.surfaceArea()); // 130
+console.log(cuboidTwo.volume()); // 100
+console.log(cuboidTwo.surfaceArea()); // 130
 
 
 
