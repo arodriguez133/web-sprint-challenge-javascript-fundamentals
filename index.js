@@ -60,7 +60,7 @@ const zooAnimals = [
   */
 
   function animalNames(){
-    displayNames = [];
+    let displayNames = [];
     zooAnimals.forEach((item) => {
       return displayNames.push(`name: ${item.animal_name} scientific: ${item.scientific_name}`)
     })
@@ -84,7 +84,7 @@ const zooAnimals = [
   */
 
   function lowPopulationAnimals(){
-    return zooAnimals.filter(p => p.population > 5);
+    return zooAnimals.filter(p => p.population < 5);
   }
   
 
@@ -130,7 +130,7 @@ function multiply(a, b){
  // 🦁🦁🦁 Use greeting to accept a first and last name and return "Hello {first-name} {last-name}, nice to meet you!" 🦁🦁🦁
   
 function greeting(first, last){
-   return `Hello ${first} ${last} nice to meet you!`
+   return `Hello ${first} ${last}, nice to meet you!`
   }
   
   // 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁 
@@ -151,15 +151,19 @@ function greeting(first, last){
 /* 🐴🐴🐴 Step 1: Base Constructor 🐴🐴🐴
  Use the constructor function named CuboidMaker to accept properties for length, width, and height which can be initialized as an object
 */
-function CuboidMaker(/*Your Code Here */){
-  /*Your Code Here */
+function CuboidMaker(length, width, height){
+  return this.length = length;
+         this.width = width;
+         this.height = height;
 }
 
 
 /* 🐴🐴🐴 Step 2: Volume Method 🐴🐴🐴
   Create a method called volume using CuboidMaker's prototype that returns the volume of a given cuboid's length, width, and height
   Formula for cuboid volume: length * width * height   */
-
+CuboidMaker.prototype.volume = function(lenght, width, height){
+return this.length * this.width * this.height;
+}
 
 
 
@@ -168,7 +172,9 @@ function CuboidMaker(/*Your Code Here */){
   Create another method called surfaceArea using CuboidMaker's prototype that returns the surface area of a given cuboid's length, width, and height. 
   Formula for cuboid surface area of a cube: 
   2 * (length * width + length * height + width * height)  */
-
+CuboidMaker.proptotype.surfaceArea = function(length, width, height){
+return 2 * (length * width + length * height + width * height);
+}
 
 
 
